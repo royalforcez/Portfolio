@@ -14,7 +14,7 @@
         <div class="image-wrapper">
           <img src="/src/assets/image_profile.png" alt="Image 2">
         </div>
-        <div class="image-title">Titre Image 2</div>
+        <div class="image-title">YOPPPPPPPP</div>
       </div>
 
       
