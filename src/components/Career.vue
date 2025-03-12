@@ -61,19 +61,69 @@ export default {
 <style scoped>
 .career {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2a3d 100%);
-  padding: 2rem;
+  background: var(--page-bg);
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.career::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
+  animation: gentle-wave 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes gentle-wave {
+  0%, 100% {
+    transform: translate(-25%, -25%) scale(1);
+  }
+  33% {
+    transform: translate(-26%, -24%) scale(1.01);
+  }
+  66% {
+    transform: translate(-24%, -26%) scale(0.99);
+  }
+}
+
+.section-title, .timeline-container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
-  color: var(--white);
+  color: var(--pastel-purple);
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--pastel-purple), var(--pastel-teal));
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 .timeline-container {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   position: relative;
   padding: 1rem 0;
@@ -83,17 +133,18 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
+  width: 4px;
   height: 100%;
-  background: var(--secondary-blue);
-  opacity: 0.5;
+  background: linear-gradient(to bottom, var(--pastel-purple), var(--pastel-teal));
+  opacity: 0.6;
+  border-radius: 2px;
 }
 
 .timeline-item {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   position: relative;
 }
 
@@ -101,11 +152,22 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: var(--secondary-blue);
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-teal));
   border-radius: 50%;
   z-index: 2;
+  box-shadow: 0 0 0 4px var(--bg-primary), 
+             0 0 0 6px rgba(106, 90, 205, 0.2),
+             0 0 20px rgba(106, 90, 205, 0.4);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: translateX(-50%) scale(1.2);
+  box-shadow: 0 0 0 4px var(--bg-primary), 
+             0 0 0 6px rgba(106, 90, 205, 0.3),
+             0 0 25px rgba(106, 90, 205, 0.5);
 }
 
 .timeline-content {
@@ -121,30 +183,41 @@ export default {
 }
 
 .timeline-date {
-  color: var(--secondary-blue);
-  font-size: 1.1rem;
+  color: var(--pastel-coral);
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .timeline-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--pastel-purple), var(--pastel-teal)) 1;
+  box-shadow: 0 5px 15px rgba(106, 90, 205, 0.2),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(106, 90, 205, 0.3),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .timeline-title {
-  color: var(--white);
-  font-size: 1.2rem;
+  color: var(--pastel-navy);
+  font-size: 1.3rem;
   margin-bottom: 0.8rem;
+  font-weight: 700;
 }
 
 .timeline-description {
-  color: var(--white);
+  color: var(--text-dark);
   font-size: 1rem;
-  line-height: 1.5;
-  opacity: 0.9;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {

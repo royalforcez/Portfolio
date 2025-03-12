@@ -51,64 +51,106 @@ export default {
 <style scoped>
 .projects {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2a3d 100%);
-  padding: 2rem;
+  background: var(--page-bg);
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
+  animation: soft-pulse 18s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: translate(-25%, -25%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-25%, -25%) scale(1.02);
+    opacity: 1;
+  }
+}
+
+.section-title, .projects-container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
-  color: var(--white);
+  color: var(--pastel-navy);
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
+  font-weight: 600;
 }
 
 .projects-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .project-card {
   width: 280px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+  background: var(--white);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 25px rgba(59, 93, 143, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(59, 93, 143, 0.15);
 }
 
 .project-image {
   width: 100%;
   height: 180px;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-light);
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
 .project-title {
-  color: var(--white);
+  color: var(--pastel-navy);
   font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .project-description {
-  color: var(--white);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
   text-align: center;
 }
 

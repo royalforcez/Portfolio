@@ -37,62 +37,139 @@ export default {
 <style scoped>
 .about-me {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2a3d 100%);
-  padding: 2rem;
+  background: var(--page-bg);
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-me::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
+  animation: subtle-floating 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes subtle-floating {
+  0%, 100% {
+    transform: translate(-25%, -25%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-26%, -24%) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(-25%, -26%) rotate(0deg);
+  }
+  75% {
+    transform: translate(-24%, -25%) rotate(-0.5deg);
+  }
+}
+
+.section-title, .content-container, .profile-container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
-  color: var(--white);
+  color: var(--pastel-purple);
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--pastel-purple), var(--pastel-teal));
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 .content-container {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 .profile-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .profile-image {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  border: 3px solid var(--white);
+  border: 4px solid var(--white);
+  box-shadow: 0 8px 25px rgba(106, 90, 205, 0.3),
+              0 0 0 8px rgba(106, 90, 205, 0.1);
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  border-color: var(--pastel-purple);
+  box-shadow: 0 12px 30px rgba(106, 90, 205, 0.4),
+              0 0 0 12px rgba(106, 90, 205, 0.15);
 }
 
 .description-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .text-box {
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  border: 2px solid var(--pastel-teal);
+  box-shadow: 0 5px 20px rgba(32, 178, 170, 0.2),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.text-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(32, 178, 170, 0.3),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .text-box p {
-  color: var(--white);
-  font-size: 1rem;
-  line-height: 1.5;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .profile-image {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .text-box {
+    padding: 1.5rem;
   }
 }
 </style> 

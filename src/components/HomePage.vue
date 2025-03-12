@@ -23,22 +23,67 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2a3d 100%);
+  background: var(--page-bg);
   position: relative;
+  overflow: hidden;
+}
+
+.home-page::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
+  animation: subtle-breathing 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes subtle-breathing {
+  0%, 100% {
+    transform: translate(-25%, -25%) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(-27%, -23%) rotate(1deg) scale(1.02);
+  }
+  66% {
+    transform: translate(-23%, -27%) rotate(-1deg) scale(0.98);
+  }
 }
 
 .title-container {
-  padding: 2rem 3rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2.5rem 4rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  border: 3px solid var(--pastel-purple);
+  box-shadow: 0 8px 30px rgba(106, 90, 205, 0.3), 
+              0 0 0 5px rgba(106, 90, 205, 0.1),
+              inset 0 0 15px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.title-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(106, 90, 205, 0.4), 
+              0 0 0 6px rgba(106, 90, 205, 0.15),
+              inset 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
 .title {
-  font-size: 3.5rem;
-  color: var(--white);
+  font-size: 3.8rem;
+  background: linear-gradient(45deg, var(--pastel-purple) 20%, var(--pastel-teal) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   letter-spacing: 2px;
   text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 .scroll-indicator {
@@ -53,18 +98,34 @@ export default {
 }
 
 .scroll-text {
-  color: var(--white);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  color: var(--pastel-purple);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
   letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .scroll-arrow {
   width: 15px;
   height: 15px;
-  border-right: 2px solid var(--secondary-blue);
-  border-bottom: 2px solid var(--secondary-blue);
+  border-right: 3px solid var(--pastel-purple);
+  border-bottom: 3px solid var(--pastel-purple);
   transform: rotate(45deg);
+  animation: bounce 1.5s infinite;
+  box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateY(-10px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(-5px) rotate(45deg);
+  }
 }
 
 @media (max-width: 768px) {
