@@ -1,5 +1,13 @@
 <template>
   <div class="app">
+    <div class="animated-background">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+      <div class="shape shape-6"></div>
+    </div>
     <div class="snap-container">
       <section class="snap-section"><HomePage /></section>
       <section class="snap-section"><AboutMe /></section>
@@ -120,6 +128,167 @@ html, body {
   height: 100vh;
   overflow: hidden;
   color: var(--text-dark);
+  position: relative;
+}
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.shape {
+  position: absolute;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  opacity: 0.65;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 40%, rgba(147, 112, 219, 0.25), rgba(106, 90, 205, 0.15));
+  top: 10%;
+  left: 10%;
+  animation: float-1 15s infinite;
+}
+
+.shape-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle at 30% 40%, rgba(32, 178, 170, 0.2), rgba(60, 179, 113, 0.15));
+  top: 60%;
+  left: 20%;
+  animation: float-2 18s infinite;
+}
+
+.shape-3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 107, 136, 0.15), rgba(255, 163, 67, 0.1));
+  bottom: -10%;
+  right: 10%;
+  animation: float-3 20s infinite;
+}
+
+.shape-4 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at 30% 40%, rgba(147, 112, 219, 0.2), rgba(106, 90, 205, 0.12));
+  top: 25%;
+  right: 25%;
+  animation: float-4 14s infinite;
+}
+
+.shape-5 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 30% 40%, rgba(32, 178, 170, 0.18), rgba(60, 179, 113, 0.12));
+  top: 70%;
+  right: 40%;
+  animation: float-5 16s infinite;
+}
+
+.shape-6 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 107, 136, 0.12), rgba(255, 163, 67, 0.08));
+  top: 35%;
+  left: 48%;
+  animation: float-6 22s infinite;
+}
+
+@keyframes float-1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(80px, 40px) rotate(8deg) scale(1.08);
+  }
+  100% {
+    transform: translate(-60px, 50px) rotate(-5deg) scale(0.95);
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 70px) rotate(-12deg) scale(1.15);
+  }
+  100% {
+    transform: translate(40px, -40px) rotate(6deg) scale(0.92);
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-60px, -60px) rotate(5deg) scale(0.9);
+  }
+  100% {
+    transform: translate(40px, 50px) rotate(-7deg) scale(1.06);
+  }
+}
+
+@keyframes float-4 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(40px, -40px) rotate(-8deg) scale(1.12);
+  }
+  100% {
+    transform: translate(-30px, 30px) rotate(10deg) scale(0.94);
+  }
+}
+
+@keyframes float-5 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(60px, 20px) rotate(10deg) scale(0.88);
+  }
+  100% {
+    transform: translate(-50px, -25px) rotate(-15deg) scale(1.1);
+  }
+}
+
+@keyframes float-6 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 40px) rotate(-6deg) scale(1.06);
+  }
+  100% {
+    transform: translate(30px, -50px) rotate(8deg) scale(0.92);
+  }
 }
 
 .snap-container {
@@ -127,6 +296,8 @@ html, body {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  position: relative;
+  z-index: 1;
 }
 
 .snap-section {

@@ -88,39 +88,14 @@ export default {
 <style scoped>
 .marketing-project {
   min-height: 100vh;
-  background: var(--page-bg);
+  background: transparent;
   padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
 }
 
 .marketing-project::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: gentle-breathing 18s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes gentle-breathing {
-  0%, 100% {
-    transform: translate(-25%, -25%) rotate(0deg);
-    opacity: 0.8;
-  }
-  33% {
-    transform: translate(-25%, -25%) rotate(0.3deg);
-    opacity: 0.9;
-  }
-  66% {
-    transform: translate(-25%, -25%) rotate(-0.3deg);
-    opacity: 1;
-  }
+  content: none;
 }
 
 .section-title, .pdf-download, .sections-container {

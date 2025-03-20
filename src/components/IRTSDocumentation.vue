@@ -3,7 +3,7 @@
     <h1 class="page-title">Documentation</h1>
     
     <div class="documentation-container">
-      <!-- Section C# -->
+      
       <div class="doc-section" :class="{ 'active': isCsharpOpen }">
         <div class="section-header" @click="toggleCsharp">
           <h2 class="section-title">Le C#</h2>
@@ -11,13 +11,13 @@
         </div>
         <div class="section-content" :class="{ 'expanded': isCsharpOpen }">
           <div class="content-box">
-            <!-- Contenu à remplir -->
-            <p>Votre contenu sur le C# ici...</p>
+            
+            <p>Description</p>
           </div>
         </div>
       </div>
       
-      <!-- Section Unity -->
+      
       <div class="doc-section" :class="{ 'active': isUnityOpen }">
         <div class="section-header" @click="toggleUnity">
           <h2 class="section-title">Unity</h2>
@@ -25,13 +25,13 @@
         </div>
         <div class="section-content" :class="{ 'expanded': isUnityOpen }">
           <div class="content-box">
-            <!-- Contenu à remplir -->
-            <p>Votre contenu sur Unity ici...</p>
+            
+            <p>Description</p>
           </div>
         </div>
       </div>
       
-      <!-- Section Varjo/Meta Quest -->
+      
       <div class="doc-section" :class="{ 'active': isVarjoOpen }">
         <div class="section-header" @click="toggleVarjo">
           <h2 class="section-title">Varjo/Meta Quest Setup</h2>
@@ -39,8 +39,8 @@
         </div>
         <div class="section-content" :class="{ 'expanded': isVarjoOpen }">
           <div class="content-box">
-            <!-- Contenu à remplir -->
-            <p>Votre contenu sur Varjo/Meta Quest ici...</p>
+            
+            <p>Description</p>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default {
 <style scoped>
 .irts-documentation {
   min-height: 100vh;
-  background: var(--page-bg);
+  background: transparent;
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
@@ -91,28 +91,7 @@ export default {
 }
 
 .irts-documentation::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: subtle-breath 15s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes subtle-breath {
-  0%, 100% {
-    transform: translate(-25%, -25%) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate(-25%, -25%) scale(1.015);
-    opacity: 1;
-  }
+  content: none;
 }
 
 .page-title, .documentation-container {

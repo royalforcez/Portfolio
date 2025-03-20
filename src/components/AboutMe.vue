@@ -37,39 +37,14 @@ export default {
 <style scoped>
 .about-me {
   min-height: 100vh;
-  background: var(--page-bg);
+  background: transparent;
   padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
 }
 
 .about-me::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: subtle-floating 15s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes subtle-floating {
-  0%, 100% {
-    transform: translate(-25%, -25%) rotate(0deg);
-  }
-  25% {
-    transform: translate(-26%, -24%) rotate(0.5deg);
-  }
-  50% {
-    transform: translate(-25%, -26%) rotate(0deg);
-  }
-  75% {
-    transform: translate(-24%, -25%) rotate(-0.5deg);
-  }
+  content: none;
 }
 
 .section-title, .content-container, .profile-container {

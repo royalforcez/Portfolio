@@ -61,36 +61,18 @@ export default {
 <style scoped>
 .career {
   min-height: 100vh;
-  background: var(--page-bg);
-  padding: 3rem 2rem;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .career::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: gentle-wave 20s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes gentle-wave {
-  0%, 100% {
-    transform: translate(-25%, -25%) scale(1);
-  }
-  33% {
-    transform: translate(-26%, -24%) scale(1.01);
-  }
-  66% {
-    transform: translate(-24%, -26%) scale(0.99);
-  }
+  content: none;
 }
 
 .section-title, .timeline-container {
@@ -102,14 +84,14 @@ export default {
   color: var(--pastel-purple);
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
   position: relative;
   display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  transform: none;
+  left: 0;
 }
 
 .section-title::after {
@@ -123,7 +105,7 @@ export default {
 }
 
 .timeline-container {
-  max-width: 850px;
+  max-width: 600px;
   margin: 0 auto;
   position: relative;
   padding: 1rem 0;
@@ -131,8 +113,7 @@ export default {
 
 .timeline-line {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
   width: 4px;
   height: 100%;
   background: linear-gradient(to bottom, var(--pastel-purple), var(--pastel-teal));
@@ -142,7 +123,7 @@ export default {
 
 .timeline-item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 3.5rem;
   position: relative;
@@ -150,7 +131,7 @@ export default {
 
 .timeline-dot {
   position: absolute;
-  left: 50%;
+  left: 20px;
   transform: translateX(-50%);
   width: 24px;
   height: 24px;
@@ -171,15 +152,15 @@ export default {
 }
 
 .timeline-content {
-  width: 45%;
-  margin-left: 55%;
+  width: calc(100% - 50px);
+  margin-left: 50px;
   position: relative;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-  margin-left: 0;
-  margin-right: 55%;
-  text-align: right;
+  margin-left: 50px;
+  margin-right: 0;
+  text-align: left;
 }
 
 .timeline-date {

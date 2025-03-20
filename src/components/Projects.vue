@@ -51,35 +51,14 @@ export default {
 <style scoped>
 .projects {
   min-height: 100vh;
-  background: var(--page-bg);
+  background: transparent;
   padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
 }
 
 .projects::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: soft-pulse 18s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes soft-pulse {
-  0%, 100% {
-    transform: translate(-25%, -25%) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate(-25%, -25%) scale(1.02);
-    opacity: 1;
-  }
+  content: none;
 }
 
 .section-title, .projects-container {
@@ -98,14 +77,17 @@ export default {
 .projects-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  max-width: 1200px;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: auto;
 }
 
 .project-card {
-  width: 280px;
+  width: 260px;
+  flex-shrink: 0;
   background: var(--white);
   border-radius: 15px;
   padding: 1.5rem;
@@ -152,6 +134,17 @@ export default {
   font-size: 0.95rem;
   line-height: 1.6;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .projects-container {
+    flex-wrap: wrap;
+  }
+  
+  .project-card {
+    width: calc(50% - 1rem);
+    max-width: 280px;
+  }
 }
 
 @media (max-width: 768px) {

@@ -43,49 +43,35 @@ export default {
 <style scoped>
 .project-images {
   min-height: 100vh;
-  background: var(--page-bg);
-  padding: 3rem 2rem;
+  background: transparent;
+  padding: 0;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .project-images::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: gentle-drift 15s ease-in-out infinite;
-  z-index: 0;
+  content: none;
 }
 
-@keyframes gentle-drift {
-  0%, 100% {
-    transform: translate(-25%, -25%) scale(1);
-  }
-  33% {
-    transform: translate(-24%, -26%) scale(1.01);
-  }
-  66% {
-    transform: translate(-26%, -24%) scale(0.99);
-  }
+.section-title, .images-container {
+  position: relative;
+  z-index: 1;
 }
 
 .images-container {
-  position: relative;
-  z-index: 1;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .image-card {
@@ -93,6 +79,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   transition: transform 0.3s ease;
 }
 
@@ -102,38 +89,23 @@ export default {
 
 .image-wrapper {
   position: relative;
+  width: 100%;
+  height: 220px;
   border-radius: 15px;
   overflow: hidden;
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 8px 25px rgba(106, 90, 205, 0.2);
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 25px rgba(59, 93, 143, 0.1);
   transition: all 0.3s ease;
 }
 
 .image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  margin: -3px;
-  border-radius: 18px;
-  background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-coral));
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  content: none;
 }
 
 .image-wrapper:hover {
-  box-shadow: 0 15px 35px rgba(106, 90, 205, 0.3),
-              0 0 20px rgba(255, 107, 136, 0.4);
-}
-
-.image-wrapper:hover::before {
-  opacity: 1;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(59, 93, 143, 0.15);
 }
 
 img {
@@ -168,7 +140,7 @@ img {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--pastel-purple), var(--pastel-coral));
+  background: linear-gradient(to right, var(--pastel-purple), var(--pastel-teal));
   transition: width 0.3s ease;
 }
 

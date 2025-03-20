@@ -23,35 +23,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--page-bg);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
 
 .home-page::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: subtle-breathing 10s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes subtle-breathing {
-  0%, 100% {
-    transform: translate(-25%, -25%) rotate(0deg) scale(1);
-  }
-  33% {
-    transform: translate(-27%, -23%) rotate(1deg) scale(1.02);
-  }
-  66% {
-    transform: translate(-23%, -27%) rotate(-1deg) scale(0.98);
-  }
+  content: none;
 }
 
 .title-container {

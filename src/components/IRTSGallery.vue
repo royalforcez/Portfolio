@@ -37,56 +37,32 @@ export default {
 <style scoped>
 .irts-gallery {
   min-height: 100vh;
-  background: var(--page-bg);
-  padding: 3rem 2rem;
+  background: transparent;
+  padding: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .irts-gallery::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, var(--page-bg-alt) 0%, var(--page-bg) 70%);
-  animation: soft-ripple 20s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes soft-ripple {
-  0%, 100% {
-    transform: translate(-25%, -25%) scale(1);
-  }
-  20% {
-    transform: translate(-26%, -24%) scale(1.01);
-  }
-  40% {
-    transform: translate(-24%, -26%) scale(0.99);
-  }
-  60% {
-    transform: translate(-23%, -25%) scale(1.01);
-  }
-  80% {
-    transform: translate(-25%, -23%) scale(0.99);
-  }
+  content: none;
 }
 
 .gallery-container {
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 1rem;
 }
 
 .gallery-item {
@@ -94,6 +70,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   transition: transform 0.3s ease;
 }
 
@@ -107,37 +84,19 @@ export default {
   height: 220px;
   border-radius: 15px;
   overflow: hidden;
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 25px rgba(106, 90, 205, 0.2);
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 25px rgba(59, 93, 143, 0.1);
   transition: all 0.3s ease;
 }
 
 .photo-frame::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  margin: -3px;
-  border-radius: 18px;
-  background: linear-gradient(45deg, var(--pastel-gold), var(--pastel-coral));
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  content: none;
 }
 
 .photo-frame:hover {
-  box-shadow: 0 15px 35px rgba(106, 90, 205, 0.3),
-              0 0 20px rgba(255, 163, 67, 0.4);
-}
-
-.photo-frame:hover::before {
-  opacity: 1;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(59, 93, 143, 0.15);
 }
 
 .photo-image {
@@ -154,7 +113,7 @@ export default {
 
 .photo-title {
   margin-top: 1.2rem;
-  color: var(--pastel-gold);
+  color: var(--pastel-navy);
   font-size: 1.2rem;
   text-align: center;
   font-weight: 700;
@@ -172,7 +131,7 @@ export default {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--pastel-gold), var(--pastel-coral));
+  background: linear-gradient(to right, var(--pastel-purple), var(--pastel-teal));
   transition: width 0.3s ease;
 }
 
