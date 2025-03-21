@@ -20,6 +20,9 @@
       <section class="snap-section"><IRTSGallery /></section>
       <section class="snap-section scrollable-section"><IRTSDocumentation /></section>
       <section class="snap-section"><WorkshopMinecraft /></section>
+      <section class="snap-section"><WorkshopMinecraftGallery /></section>
+      <section class="snap-section"><LANProject /></section>
+      <section class="snap-section"><LANGallery /></section>
     </div>
   </div>
 </template>
@@ -36,6 +39,9 @@ import VirtualRealityProject from './components/VirtualRealityProject.vue'
 import IRTSGallery from './components/IRTSGallery.vue'
 import IRTSDocumentation from './components/IRTSDocumentation.vue'
 import WorkshopMinecraft from './components/WorkshopMinecraft.vue'
+import WorkshopMinecraftGallery from './components/WorkshopMinecraftGallery.vue'
+import LANProject from './components/LANProject.vue'
+import LANGallery from './components/LANGallery.vue'
 
 export default {
   name: 'App',
@@ -50,7 +56,10 @@ export default {
     VirtualRealityProject,
     IRTSGallery,
     IRTSDocumentation,
-    WorkshopMinecraft
+    WorkshopMinecraft,
+    WorkshopMinecraftGallery,
+    LANProject,
+    LANGallery
   },
   mounted() {
     // Gestion du défilement améliorée

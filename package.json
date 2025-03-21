@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "portfolio": "npm run dev",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -15,4 +16,4 @@
     "@vitejs/plugin-vue": "^4.5.0",
     "vite": "^5.0.0"
   }
-} 
+}
