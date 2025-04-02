@@ -23,6 +23,7 @@
       <section class="snap-section"><WorkshopMinecraftGallery /></section>
       <section class="snap-section"><LANProject /></section>
       <section class="snap-section"><LANGallery /></section>
+      <section class="snap-section"><Contact /></section>
     </div>
   </div>
 </template>
@@ -42,6 +43,7 @@ import WorkshopMinecraft from './components/WorkshopMinecraft.vue'
 import WorkshopMinecraftGallery from './components/WorkshopMinecraftGallery.vue'
 import LANProject from './components/LANProject.vue'
 import LANGallery from './components/LANGallery.vue'
+import Contact from './components/Contact.vue'
 
 export default {
   name: 'App',
@@ -59,7 +61,8 @@ export default {
     WorkshopMinecraft,
     WorkshopMinecraftGallery,
     LANProject,
-    LANGallery
+    LANGallery,
+    Contact
   },
   mounted() {
     // Gestion du défilement améliorée
