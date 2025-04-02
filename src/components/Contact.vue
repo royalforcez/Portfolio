@@ -4,7 +4,7 @@
 
     <div class="content-container">
       <div class="image-container">
-        <img src="/src/assets/contact_image.png" alt="Image de contact" class="contact-image" />
+        <img src="/src/assets/image_profile.png" alt="Image de contact" class="contact-image" />
       </div>
 
       <div class="contact-info">
@@ -14,7 +14,7 @@
         </div>
         <div class="contact-item">
           <i class="fas fa-phone"></i>
-          <a href="tel:+33600000000">06 71 46 15 30</a>
+          <a>06 71 46 15 30</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-linkedin"></i>
