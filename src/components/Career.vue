@@ -28,29 +28,28 @@ export default {
     return {
       careerItems: [
         {
-          date: '2023',
-          title: 'Formation 1',
-          description: 'Description'
+          date: 'Juillet 2023',
+          title: 'BAC Général',
+          description: 'Mention Assez Bien Spé Maths/NSI'
         },
         {
-          date: '2022',
-          title: 'Formation 2',
-          description: 'Description'
+          date: 'Septembre 2023',
+          title: 'Entrée à l\'EPSI',
+          description: 'Entrée en 1ère année en cycle développeur'
         },
         {
-          date: '2021',
-          title: 'Formation 3',
-          description: 'Description'
+          date: 'Mai 2024',
+          title: 'Stage IRTS',
+          description: 'Développement d\'un support de formation en VR'
         },
         {
-          date: '2020',
-          title: 'Formation 4',
-          description: 'Description'
+          date: 'Septembre 2024',
+          title: 'Entrée en 2ème année',
+          description: 'Cycle développeur'
         },
         {
-          date: '2019',
-          title: 'Formation 5',
-          description: 'Description'
+          date: 'Septembre 2025',
+          title: 'Entrée en Bachelor SysOps',
         }
       ]
     }

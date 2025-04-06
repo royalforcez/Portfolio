@@ -1,7 +1,8 @@
 <template>
   <section class="home-page">
     <div class="title-container">
-      <h1 class="title">Portfolio</h1>
+      <h1 class="title">Sacha</h1> 
+      <h2 class="title2">Cazin--Lepczynski</h2>
     </div>
 
     <div class="scroll-indicator">
@@ -54,6 +55,18 @@ export default {
 
 .title {
   font-size: 3.8rem;
+  background: linear-gradient(45deg, var(--pastel-purple) 20%, var(--pastel-teal) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+.title2 {
+  font-size: 2.0rem;
   background: linear-gradient(45deg, var(--pastel-purple) 20%, var(--pastel-teal) 80%);
   background-clip: text;
   -webkit-background-clip: text;
