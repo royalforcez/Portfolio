@@ -1,30 +1,35 @@
 <template>
   <section class="project-images">
     <div class="images-container">
-      
       <div class="image-card">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="Image 1">
+          <img src="/src/assets/sommaire_MD.png" alt="Image 1">
         </div>
         <div class="image-title"></div>
       </div>
 
       
       <div class="image-card">
-        <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="Image 2">
-        </div>
+        
+        
+          
+            <input type="checkbox" id="zoomCheck">
+            <label class="image-wrapper" for="zoomCheck">
+            <img src="/src/assets/objectifs_MD.png" alt="Image 2">
+          </label>
+        
         <div class="image-title"></div>
       </div>
 
       
       <div class="image-card">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="Image 3">
+          <img src="/src/assets/pestel_MD.png" alt="Image 3">
         </div>
         <div class="image-title"></div>
       </div>
     </div>
+    <div class="overlay"></div>
   </section>
 </template>
 
@@ -35,6 +40,37 @@ export default {
 </script>
 
 <style scoped>
+
+input[type=checkbox] {
+  display: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+input[type=checkbox]:checked ~ .overlay {
+  display: block;
+}
+
+input[type=checkbox]:checked + .image-wrapper {
+  position : fixed;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%) scale(1.7); 
+  z-index: 1000;
+  cursor : zoom-out;
+  background : var(--white);
+}
+
 .project-images {
   min-height: 100vh;
   background: transparent;
@@ -81,13 +117,14 @@ export default {
 .image-wrapper {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 450px;
   border-radius: 15px;
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--border-light);
   box-shadow: 0 8px 25px rgba(59, 93, 143, 0.1);
   transition: all 0.3s ease;
+  cursor : zoom-in;
 }
 
 .image-wrapper::before {
@@ -101,14 +138,15 @@ export default {
 
 img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   transition: transform 0.5s ease;
   filter: brightness(1.05);
+  cursor : zoom-in
 }
 
 .image-wrapper:hover img {
-  transform: scale(1.08);
+  transform: scale(1.01);
 }
 
 .image-title {
