@@ -31,14 +31,12 @@ export default {
           image: '/src/assets/IRTS_Project.png'
         },
         {
-          title: 'Projet 3',
-          description: 'Description',
-          image: '/src/assets/project3.jpg'
+          title: 'Worskhop Minecraft',
+          image: '/src/assets/screen_minecraft_workshop1.png'
         },
         {
-          title: 'Projet 4',
-          description: 'Description',
-          image: '/src/assets/project4.jpg'
+          title: 'LAN Party',
+          image: '/src/assets/lan_party_image.png'
         }
       ],
       isTransitioning: false,
@@ -51,24 +49,23 @@ export default {
     const container = document.querySelector('.projects-container');
     const projectsSection = this.$el.closest('.snap-section');
     
-    // Configurer l'effet de flou d'arrière-plan pour chaque image
+    
     this.setupBlurEffects();
     
     if (container) {
-      // Gestionnaire pour le défilement horizontal
+      
       container.addEventListener('wheel', (event) => {
         event.preventDefault();
         
-        // Détecter la direction du défilement
+        
         const isScrollingUp = event.deltaY < 0;
         
-        // Si on défile vers le haut au début de la section des projets
-        // Ajouter une condition plus stricte pour éviter les déclenchements accidentels
+        
         if (isScrollingUp && container.scrollLeft <= 10 && Math.abs(event.deltaY) > 50) {
-          // Compteur pour éviter les activations accidentelles
+          
           if (!this.upScrollCount) {
             this.upScrollCount = 1;
-            // Réinitialiser après un court délai
+            
             setTimeout(() => {
               this.upScrollCount = 0;
             }, 800);
@@ -77,9 +74,9 @@ export default {
           
           this.upScrollCount++;
           
-          // Ne remonter qu'après plusieurs défilements successifs vers le haut
+          
           if (this.upScrollCount >= 3) {
-            // Accélération du retour à la section précédente
+            
             const previousSection = projectsSection.previousElementSibling;
             if (previousSection) {
               previousSection.scrollIntoView({ behavior: 'smooth' });
@@ -88,29 +85,29 @@ export default {
             }
           }
         } else if (!isScrollingUp) {
-          // Réinitialiser le compteur quand on défile vers le bas
+         
           this.upScrollCount = 0;
         }
         
-        // Augmenter la vitesse de défilement (facteur de 3)
+        
         const scrollAmount = event.deltaY * 3;
         
-        // Vérifier si on a atteint la fin du défilement
+        
         if (container.scrollLeft + container.clientWidth + scrollAmount >= container.scrollWidth) {
-          // Si c'est le dernier projet, afficher le dernier projet complètement d'abord
+          
           if (!this.isTransitioning) {
             this.isTransitioning = true;
             
-            // Vérifier si l'utilisateur a déjà essayé de défiler au-delà
+            
             if (this.hasReachedEnd) {
-              // Si oui, naviguer immédiatement vers la section suivante
+              
               const currentSection = this.$el.closest('.snap-section');
               const nextSection = currentSection.nextElementSibling;
               
               if (nextSection) {
                 nextSection.scrollIntoView({ behavior: 'smooth' });
                 
-                // Réinitialiser les états
+                
                 setTimeout(() => {
                   this.isTransitioning = false;
                   this.hasReachedEnd = false;
@@ -119,35 +116,35 @@ export default {
               return;
             }
             
-            // Premier défilement à la fin, marquer l'état et montrer le dernier projet
+            
             this.hasReachedEnd = true;
             
-            // S'assurer que le dernier projet est entièrement visible
+            
             const lastCardPosition = container.scrollWidth - container.clientWidth;
             container.scrollTo({
               left: lastCardPosition,
               behavior: 'smooth'
             });
             
-            // Attendre un court délai avant de réinitialiser
+            
             setTimeout(() => {
               this.isTransitioning = false;
             }, 500);
           }
         } else {
-          // Réinitialiser l'indicateur de fin lorsqu'on n'est plus à la fin
+          
           if (container.scrollLeft + container.clientWidth < container.scrollWidth - 50) {
             this.hasReachedEnd = false;
           }
           
-          // Continuer le défilement normal
+          
           container.scrollLeft += scrollAmount;
         }
       }, { passive: false });
       
-      // Modifier le gestionnaire d'événements supplémentaire
+      
       projectsSection.addEventListener('wheel', (event) => {
-        // Ne déclencher que si le défilement est significatif et répété
+        
         if (event.deltaY < -50 && container.scrollLeft <= 10) {
           if (!this.sectionUpScrollCount) {
             this.sectionUpScrollCount = 1;
@@ -174,17 +171,17 @@ export default {
   },
   methods: {
     setupBlurEffects() {
-      // Attendre que les images soient chargées
+      
       setTimeout(() => {
         const imageContainers = document.querySelectorAll('.project-image');
         imageContainers.forEach((container, index) => {
           const img = container.querySelector('img');
           if (img) {
-            // Si l'image est déjà chargée
+            
             if (img.complete) {
               this.applyBlurEffect(container, img, index);
             } else {
-              // Sinon attendre que l'image se charge
+              
               img.onload = () => {
                 this.applyBlurEffect(container, img, index);
               };
@@ -194,7 +191,7 @@ export default {
       }, 300);
     },
     applyBlurEffect(container, img, index) {
-      // Utiliser l'image comme arrière-plan flou
+      
       const imgUrl = this.projects[index].image;
       container.style.setProperty('--image-url', `url(${imgUrl})`);
       img.style.opacity = '1';

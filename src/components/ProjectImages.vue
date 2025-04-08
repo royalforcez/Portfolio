@@ -6,7 +6,7 @@
         <div class="image-wrapper">
           <img src="/src/assets/image_profile.png" alt="Image 1">
         </div>
-        <div class="image-title">Titre Image 1</div>
+        <div class="image-title"></div>
       </div>
 
       
@@ -14,7 +14,7 @@
         <div class="image-wrapper">
           <img src="/src/assets/image_profile.png" alt="Image 2">
         </div>
-        <div class="image-title">YOPPPPPPPP</div>
+        <div class="image-title"></div>
       </div>
 
       
@@ -22,7 +22,7 @@
         <div class="image-wrapper">
           <img src="/src/assets/image_profile.png" alt="Image 3">
         </div>
-        <div class="image-title">Titre Image 3</div>
+        <div class="image-title"></div>
       </div>
     </div>
   </section>
