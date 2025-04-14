@@ -188,7 +188,7 @@ export default {
 }
 
 .section-title {
-  color: var(--pastel-navy);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.4rem;
   margin: 0;
   font-weight: 700;
@@ -241,7 +241,7 @@ export default {
   z-index: -1;
   margin: -2px;
   border-radius: 0 0 17px 17px;
-  background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-teal));
+  background: rgba(255, 255, 255, 0.85);
   opacity: 0.6;
 }
 

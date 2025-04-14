@@ -29,7 +29,11 @@
       <div class="text-box">
         <h3 class="text-title">Présentation</h3>
         <div class="text-content">
-          <p>Description</p>
+          <p>En fin de première année, nous avons eu l'opportunité avec deux camarades Colin et Ethan de mener un stage
+            au sein du centre de formation IRTS (Institut Régionale du Travail Social) Nouvelle Aquitaine.<br>
+            Au cours de ce stage nous avions pour mission de produire un support de formation dans le domaine du social en réalité virtuelle.<br>
+            Nous avons donc décidé de créer un scénario d'aide à domicile, tout cela sur deux casques différents, le Varjo XR-3 et le Meta Quest 2.
+          </p>
         </div>
       </div>
     </div>
@@ -207,8 +211,12 @@
   z-index: -1;
   margin: -2px;
   border-radius: 17px;
-  background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-teal));
+  background:rgba(255, 255, 255, 0.85);
   opacity: 0.6;
+  border : 2px solid var(--pastel-purple);
+  box-shadow: 0 5px 15px rgba(106, 90, 205, 0.2),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
 }
 
 .text-title {
