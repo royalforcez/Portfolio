@@ -40,23 +40,10 @@
         <div class="section-content" :class="{ 'expanded': isContextOpen }">
           <div class="content-box">
             <p>
-              Texte
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-section"
-           :class="{ 'active': isPresentationOpen }"
-           @click="togglePresentation">
-        <div class="section-header">
-          <h3>Présentation</h3>
-          <div class="arrow" :class="{ 'rotated': isPresentationOpen }"></div>
-        </div>
-        <div class="section-content" :class="{ 'expanded': isPresentationOpen }">
-          <div class="content-box">
-            <p>
-              Texte
+              Nous avions 3 semaines pour produire en groupe de 5 un cahier des charges complet sur l'analyse marketing d'une entreprise de bière.
+              Il fallait donc analyser le marché de la bière en général, la concurrence, les consommateurs ect...
+              Et à partir de cela, proposer une nouvelle identité à la marque.
+              Ce projet nous a donc permis de savoir analyser un marché et des clients pour ensuite proposer une solution adaptée.
             </p>
           </div>
         </div>
