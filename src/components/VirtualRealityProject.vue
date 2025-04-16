@@ -45,6 +45,7 @@
   min-height: 100vh;
   background: transparent;
   padding: 2rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +66,7 @@
   color: var(--pastel-purple);
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
@@ -84,7 +85,7 @@
 }
 
 .youtube-link {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .youtube-button {
@@ -150,7 +151,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .image-box {
@@ -187,6 +188,7 @@
 .text-container {
   max-width: 800px;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .text-box {

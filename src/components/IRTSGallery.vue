@@ -4,25 +4,25 @@
       
       <div class="gallery-item">
         <div class="photo-frame">
-          <img src="/src/assets/image_profile.png" alt="Vue d'ensemble" class="photo-image">
+          <img src="/src/assets/Exterieur_IRTS_VR.png" alt="Vue d'ensemble" class="photo-image">
         </div>
-        <div class="photo-title">Vue d'ensemble</div>
+        <div class="photo-title">Extérieur</div>
       </div>
 
       
       <div class="gallery-item">
         <div class="photo-frame">
-          <img src="/src/assets/image_profile.png" alt="Interface utilisateur" class="photo-image">
+          <img src="/src/assets/Interieur_IRTS_VR.png" alt="Interface utilisateur" class="photo-image">
         </div>
-        <div class="photo-title">Interface utilisateur</div>
+        <div class="photo-title">Intérieur</div>
       </div>
 
       
       <div class="gallery-item">
         <div class="photo-frame">
-          <img src="/src/assets/image_profile.png" alt="Environnement virtuel" class="photo-image">
+          <img src="/src/assets/Trello_IRTS.png" alt="Environnement virtuel" class="photo-image">
         </div>
-        <div class="photo-title">Environnement virtuel</div>
+        <div class="photo-title">Trello</div>
       </div>
     </div>
   </section>
