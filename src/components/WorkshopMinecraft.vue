@@ -4,19 +4,22 @@
     <div class="content-wrapper">
       
       <div class="image-container left">
-        <img src="/src/assets/image_profile.png" alt="Workshop Minecraft Image 1" class="project-image" />
+        <img src="/src/assets/logo_minecraft.png" alt="Workshop Minecraft Image 1" class="project-image" />
       </div>
 
       <div class="text-content">
         <div class="description-container">
           <p class="description-text">
-            
+            La première semaine de chaque d'année à l'EPSI, nous avons l'objectif de créer un projet avec une thématique imposée. <br>
+            Cette année le sujet était "Vis ma vie d'étudiant en informatique". <br>
+            Pour cela nous avons donc reproduit notre campus de Bordeaux dans le jeu Minecraft, et nous l'avons ensuite hébergé sur un serveur. <br>
+            Grâce à cette carte, les étudiants pouvaient visiter l'école à travers différentes quêtes présentent au MyDIL, notre FabLab de l'école.
           </p>
         </div>
       </div>
       
       <div class="image-container right">
-        <img src="/src/assets/image_profile.png" alt="Workshop Minecraft Image 2" class="project-image" />
+        <img src="/src/assets/logo_epsi_2.png" alt="Workshop Minecraft Image 2" class="project-image" />
       </div>
     </div>
   </div>

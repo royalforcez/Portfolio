@@ -12,7 +12,9 @@
         <div class="section-content" :class="{ 'expanded': isCsharpOpen }">
           <div class="content-box">
             
-            <p>Description</p>
+            <p>C# est le langage principal utilisé dans Unity pour programmer la logique des jeux.<br>
+              Il permet de contrôler les objets, gérer les interactions et créer des comportements dynamiques dans les scènes 3D ou 2D.<br>
+              Nous l'avons donc principalement utiliser pour développer des scripts très spécifiques à notre projet, comme par l'affichage de données à l'écran pour nous aider dans notre développement</p>
           </div>
         </div>
       </div>
@@ -26,7 +28,9 @@
         <div class="section-content" :class="{ 'expanded': isUnityOpen }">
           <div class="content-box">
             
-            <p>Description</p>
+            <p>Unity est un moteur de jeu multiplateforme puissant utilisé pour créer des expériences interactives en 2D, 3D, en réalité augmentée (AR) et réalité virtuelle (VR).<br>
+               Il est largement adopté dans l'industrie pour sa flexibilité, sa communauté active et son interface intuitive.<br>
+               Pour le développement VR, nous l'avons choisi pour sa comptabilité avec la plupart des casques du marché, sa bibliothèque de plugins très riche et sa facilité d'utilisation.</p>
           </div>
         </div>
       </div>
@@ -40,7 +44,12 @@
         <div class="section-content" :class="{ 'expanded': isVarjoOpen }">
           <div class="content-box">
             
-            <p>Description</p>
+            <p>Pour développer ce projet nous avons utilisé 2 casques VR différents, le Meta Quest 2 et le Varjo XR-3.<br>
+              Le Meta Quest a été utilisé pour développer le projet en entier, dû à sa facilité d'utilisation et son accessibilité.<br>
+              Le Varjo XR-3, quant à lui, a servi à faire une demonstration de ses fonctionnalités.
+              Car il faut prendre en compte que ce casque possède des technologies très prestigieuses et ne pouvant pas être utilisées par le grand public.<br>
+              Ceci n'avait donc encore jamais été vu.
+            </p>
           </div>
         </div>
       </div>

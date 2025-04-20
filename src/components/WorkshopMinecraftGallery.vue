@@ -2,25 +2,31 @@
   <section class="project-images">
     <div class="images-container">
       
-      <div class="image-card">
+      <div class="image-card" @click="toggleZoom(0)">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="Workshop Minecraft Image 1">
+          <img src="/src/assets/epsi_ext_minecraft.png" alt="Workshop Minecraft Image 1">
         </div>
-        <div class="image-title">Image 1</div>
+        <div class="image-title">EPSI</div>
       </div>
 
-      <div class="image-card">
+      <div class="image-card" @click="toggleZoom(1)">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="Workshop Minecraft Image 2">
+          <img src="/src/assets/my_dil_minecraft.png" alt="Workshop Minecraft Image 2">
         </div>
-        <div class="image-title">Image 2</div>
+        <div class="image-title">MyDIL</div>
       </div>
 
-      <div class="image-card">
+      <div class="image-card" @click="toggleZoom(2)">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="Workshop Minecraft Image 3">
+          <img src="/src/assets/dropper_minecraft.png" alt="Workshop Minecraft Image 3">
         </div>
-        <div class="image-title">Image 3</div>
+        <div class="image-title">Quête</div>
+      </div>
+    </div>
+    
+    <div v-if="zoomedImageIndex !== null" class="image-zoom-overlay" @click="closeZoom">
+      <div class="zoomed-image-container">
+        <img :src="images[zoomedImageIndex]" alt="Image agrandie" @click.stop>
       </div>
     </div>
   </section>
@@ -28,7 +34,25 @@
 
 <script>
 export default {
-  name: 'WorkshopMinecraftGallery'
+  name: 'WorkshopMinecraftGallery',
+  data() {
+    return {
+      zoomedImageIndex: null,
+      images: [
+        '/src/assets/epsi_ext_minecraft.png',
+        '/src/assets/my_dil_minecraft.png',
+        '/src/assets/dropper_minecraft.png'
+      ]
+    }
+  },
+  methods: {
+    toggleZoom(index) {
+      this.zoomedImageIndex = index;
+    },
+    closeZoom() {
+      this.zoomedImageIndex = null;
+    }
+  }
 }
 </script>
 
@@ -82,6 +106,7 @@ export default {
   border: 1px solid var(--border-light);
   box-shadow: 0 8px 25px rgba(59, 93, 143, 0.1);
   transition: all 0.3s ease;
+  cursor: zoom-in;
 }
 
 .image-wrapper:hover {
@@ -127,6 +152,48 @@ img {
 
 .image-card:hover .image-title::after {
   width: 70%;
+}
+
+/* Styles pour le zoom des images */
+.image-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.zoomed-image-container {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  animation: zoom-in 0.5s ease forwards;
+}
+
+.zoomed-image-container img {
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  cursor: zoom-out;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.0);
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.95);
+  }
 }
 
 @media (max-width: 768px) {
