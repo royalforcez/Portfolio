@@ -4,21 +4,21 @@
       
       <div class="image-card" @click="toggleZoom(0)">
         <div class="image-wrapper">
-          <img src="/src/assets/epsi_ext_minecraft.png" alt="Workshop Minecraft Image 1">
+          <img src="/src/assets/epsi_ext_minecraft.png" alt="EPSI Extérieur">
         </div>
         <div class="image-title">EPSI</div>
       </div>
 
       <div class="image-card" @click="toggleZoom(1)">
         <div class="image-wrapper">
-          <img src="/src/assets/my_dil_minecraft.png" alt="Workshop Minecraft Image 2">
+          <img src="/src/assets/my_dil_minecraft.png" alt="MyDIL">
         </div>
         <div class="image-title">MyDIL</div>
       </div>
 
       <div class="image-card" @click="toggleZoom(2)">
         <div class="image-wrapper">
-          <img src="/src/assets/dropper_minecraft.png" alt="Workshop Minecraft Image 3">
+          <img src="/src/assets/dropper_minecraft.png" alt="Quête">
         </div>
         <div class="image-title">Quête</div>
       </div>

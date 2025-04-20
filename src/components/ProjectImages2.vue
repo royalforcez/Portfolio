@@ -4,7 +4,7 @@
       
       <div class="image-card" @click="toggleZoom(0)">
         <div class="image-wrapper">
-          <img src="/src/assets/concurrence_MD.png" alt="Titre Image 1">
+          <img src="/src/assets/concurrence_MD.png" alt="Concurrence">
         </div>
         <div class="image-title">
           Concurrence
@@ -14,7 +14,7 @@
       
       <div class="image-card" @click="toggleZoom(1)">
         <div class="image-wrapper">
-          <img src="/src/assets/swot_MD.png" alt="Titre Image 2">
+          <img src="/src/assets/swot_MD.png" alt="SWOT">
         </div>
         <div class="image-title">
           SWOT
@@ -24,7 +24,7 @@
       
       <div class="image-card" @click="toggleZoom(2)">
         <div class="image-wrapper">
-          <img src="/src/assets/persona_MD.png" alt="Titre Image 3">
+          <img src="/src/assets/persona_MD.png" alt="Personas">
         </div>
         <div class="image-title">
           Personas

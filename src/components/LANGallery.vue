@@ -2,25 +2,31 @@
   <section class="project-images">
     <div class="images-container">
       
-      <div class="image-card">
+      <div class="image-card" @click="toggleZoom(0)">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="LAN Setup">
+          <img src="/src/assets/Jira_LAN.png" alt="Jira LAN">
         </div>
-        <div class="image-title">Image 1</div>
+        <div class="image-title">Gestion de projet</div>
       </div>
 
-      <div class="image-card">
+      <div class="image-card" @click="toggleZoom(1)">
         <div class="image-wrapper">
           <img src="/src/assets/image_profile.png" alt="LAN Gaming">
         </div>
-        <div class="image-title">Image 2</div>
+        <div class="image-title"></div>
       </div>
 
-      <div class="image-card">
+      <div class="image-card" @click="toggleZoom(2)">
         <div class="image-wrapper">
           <img src="/src/assets/image_profile.png" alt="LAN Event">
         </div>
-        <div class="image-title">Image 3</div>
+        <div class="image-title"></div>
+      </div>
+    </div>
+    
+    <div v-if="zoomedImageIndex !== null" class="image-zoom-overlay" @click="closeZoom">
+      <div class="zoomed-image-container">
+        <img :src="images[zoomedImageIndex]" alt="Image agrandie" @click.stop>
       </div>
     </div>
   </section>
@@ -28,7 +34,25 @@
 
 <script>
 export default {
-  name: 'LANGallery'
+  name: 'LANGallery',
+  data() {
+    return {
+      zoomedImageIndex: null,
+      images: [
+        '/src/assets/Jira_LAN.png',
+        '/src/assets/image_profile.png',
+        '/src/assets/image_profile.png'
+      ]
+    }
+  },
+  methods: {
+    toggleZoom(index) {
+      this.zoomedImageIndex = index;
+    },
+    closeZoom() {
+      this.zoomedImageIndex = null;
+    }
+  }
 }
 </script>
 
@@ -82,6 +106,7 @@ export default {
   border: 1px solid var(--border-light);
   box-shadow: 0 8px 25px rgba(59, 93, 143, 0.1);
   transition: all 0.3s ease;
+  cursor: zoom-in;
 }
 
 .image-wrapper:hover {
@@ -127,6 +152,48 @@ img {
 
 .image-card:hover .image-title::after {
   width: 70%;
+}
+
+/* Styles pour le zoom des images */
+.image-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.zoomed-image-container {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  animation: zoom-in 0.5s ease forwards;
+}
+
+.zoomed-image-container img {
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  cursor: zoom-out;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.0);
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.95);
+  }
 }
 
 @media (max-width: 768px) {

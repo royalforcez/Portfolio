@@ -4,7 +4,7 @@
     <div class="content-wrapper">
       
       <div class="image-container left">
-        <img src="/src/assets/logo_minecraft.png" alt="Workshop Minecraft Image 1" class="project-image" />
+        <img src="/src/assets/logo_minecraft.png" alt="Logo Minecraft" class="project-image" />
       </div>
 
       <div class="text-content">
@@ -19,7 +19,7 @@
       </div>
       
       <div class="image-container right">
-        <img src="/src/assets/logo_epsi_2.png" alt="Workshop Minecraft Image 2" class="project-image" />
+        <img src="/src/assets/logo_epsi_2.png" alt="Logo EPSI" class="project-image" />
       </div>
     </div>
   </div>

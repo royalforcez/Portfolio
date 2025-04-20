@@ -3,21 +3,21 @@
     <div class="images-container">
       <div class="image-card" @click="toggleZoom(0)">
         <div class="image-wrapper">
-          <img src="/src/assets/sommaire_MD.png" alt="Image 1">
+          <img src="/src/assets/sommaire_MD.png" alt="Sommaire">
         </div>
         <div class="image-title">Sommaire</div>
       </div>
 
       <div class="image-card" @click="toggleZoom(1)">
         <div class="image-wrapper">
-          <img src="/src/assets/objectifs_MD.png" alt="Image 2">
+          <img src="/src/assets/objectifs_MD.png" alt="Objectifs">
         </div>
         <div class="image-title">Objectifs</div>
       </div>
 
       <div class="image-card" @click="toggleZoom(2)">
         <div class="image-wrapper">
-          <img src="/src/assets/pestel_MD.png" alt="Image 3">
+          <img src="/src/assets/pestel_MD.png" alt="PESTEL">
         </div>
         <div class="image-title">PESTEL</div>
       </div>

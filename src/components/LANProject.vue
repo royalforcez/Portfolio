@@ -2,16 +2,21 @@
   <div class="project-container">
     <h1 class="page-title">LAN</h1>
     <div class="content-wrapper">
-      <!-- Section texte à gauche -->
+      
       <div class="text-content">
         <div class="description-container">
           <p class="description-text">
-            <!-- Votre texte ira ici -->
+            Et nous arrivons enfin à ce dernier projet, qui est à mon sens l'un des plus ambiatieux de ces deux dernières années.<br>
+            Celui-ci est né d'une simple discussion en Octobre avec Jacques, notre responsable du MyDIL.<br>
+            Suite à cette discussion, je me suis proposé pour être chef de projet de l'EPSI LAN qui aura lieu en Juillet 2025.<br>
+            J'ai donc rassemblé des élèves de ma classe pour construire le projet ensemble.<br>
+            Actuellement l'ensemble des serveurs sont prêts à être exploités, il nous reste à l'organisation de l'événement.<br>
+            L'objectif de ce projet était de réunir les étudiants dans un projet commun au profit des autres étudiants et de créer un événement poiur rassembler les gens durant un week-end.
+
           </p>
         </div>
       </div>
-
-      <!-- Image à droite -->
+      
       <div class="image-container">
         <img src="/src/assets/image_profile.png" alt="LAN Project Image" class="project-image" />
       </div>
