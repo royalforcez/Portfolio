@@ -11,16 +11,35 @@
 
       <div class="image-card" @click="toggleZoom(1)">
         <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="LAN Gaming">
+          <img src="/src/assets/LAN_maquette.png" alt="LAN Gaming">
         </div>
-        <div class="image-title"></div>
+        <div class="image-title">Maquette site</div>
       </div>
 
-      <div class="image-card" @click="toggleZoom(2)">
-        <div class="image-wrapper">
-          <img src="/src/assets/image_profile.png" alt="LAN Event">
-        </div>
-        <div class="image-title"></div>
+      <div class="pdf-download">
+        <a href="/src/assets/Guide_serveur.pdf" 
+           download
+           class="download-button">
+          <svg class="pdf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+            <path d="M14 2v6h6" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+            <path d="M12 18v-6" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+            <path d="M8 15l4 4 4-4" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+          </svg>
+          Documentation PDF
+        </a>
       </div>
     </div>
     
@@ -40,7 +59,7 @@ export default {
       zoomedImageIndex: null,
       images: [
         '/src/assets/Jira_LAN.png',
-        '/src/assets/image_profile.png',
+        '/src/assets/LAN_maquette.png',
         '/src/assets/image_profile.png'
       ]
     }
@@ -154,6 +173,71 @@ img {
   width: 70%;
 }
 
+.pdf-download {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  color: var(--pastel-navy);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(106, 90, 205, 0.2),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.download-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-teal));
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.download-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(106, 90, 205, 0.3),
+              inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.download-button:hover::before {
+  opacity: 1;
+}
+
+.pdf-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--pastel-navy);
+  transition: all 0.3s ease;
+}
+
+.download-button:hover .pdf-icon {
+  stroke: var(--pastel-purple);
+  transform: scale(1.1);
+}
+
 /* Styles pour le zoom des images */
 .image-zoom-overlay {
   position: fixed;
@@ -202,4 +286,4 @@ img {
     max-width: 320px;
   }
 }
-</style> 
+</style>
