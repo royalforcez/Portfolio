@@ -17,6 +17,12 @@
 </template>
 
 <script>
+
+import lanPartyImage from '../assets/lan_party_image.png'
+import irtsProjectImage from '../assets/IRTS_Project.png'
+import minecraftWorkshopImage from '../assets/screen_minecraft_workshop1.png'
+import deriveLogo from '../assets/derive_logo.png'
+
 export default {
   name: 'Projects',
   data() {
@@ -24,19 +30,19 @@ export default {
       projects: [
         {
           title: 'Marketing Digital',
-          image: '/src/assets/derive_logo.png'
+          image: deriveLogo
         },
         {
           title: 'IRTS',
-          image: '/src/assets/IRTS_Project.png'
+          image: irtsProjectImage
         },
         {
           title: 'Worskhop Minecraft',
-          image: '/src/assets/screen_minecraft_workshop1.png'
+          image: minecraftWorkshopImage
         },
         {
           title: 'LAN Party',
-          image: '/src/assets/lan_party_image.png'
+          image: lanPartyImage
         }
       ],
       isTransitioning: false,
