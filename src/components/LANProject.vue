@@ -17,7 +17,9 @@
         </div>
       </div>
       
-      
+      <div class="image-container">
+        <img src="/src/assets/lan_1.png" alt="LAN Project Image" class="project-image" />
+      </div>
     </div>
   </div>
 </template>

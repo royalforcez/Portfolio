@@ -41,7 +41,7 @@ export default {
     return {
       zoomedImageIndex: null,
       images: [
-        '/src/assets/Exterieur_IRTS_VR.png',
+        '/assets/Exterieur_IRTS_VR.png',
         '/src/assets/Interieur_IRTS_VR.png',
         '/src/assets/Trello_IRTS.png'
       ]
