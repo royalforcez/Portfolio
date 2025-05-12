@@ -42,8 +42,8 @@ export default {
       zoomedImageIndex: null,
       images: [
         '/assets/Exterieur_IRTS_VR.png',
-        '/src/assets/Interieur_IRTS_VR.png',
-        '/src/assets/Trello_IRTS.png'
+        '/assets/Interieur_IRTS_VR.png',
+        '/assets/Trello_IRTS.png'
       ]
     }
   },
