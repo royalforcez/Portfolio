@@ -42,15 +42,20 @@
 </template>
 
 <script>
+
+import Concurrence from '@/assets/concurrence_MD.png'
+import Swot from '@/assets/swot_MD.png'
+import Persona from '@/assets/persona_MD.png'
+
 export default {
   name: 'ProjectImages2',
   data() {
     return {
       zoomedImageIndex: null,
       images: [
-        '/src/assets/concurrence_MD.png',
-        '/src/assets/swot_MD.png',
-        '/src/assets/persona_MD.png'
+        Concurrence,
+        Swot,
+        Persona
       ]
     }
   },

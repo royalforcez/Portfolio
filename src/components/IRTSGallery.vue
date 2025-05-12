@@ -35,15 +35,20 @@
 </template>
 
 <script>
+
+import ExterieurImage from '@/assets/Exterieur_IRTS_VR.png'
+import InterieurImage from '@/assets/Interieur_IRTS_VR.png'
+import TrelloImage from '@/assets/Trello_IRTS.png'
+
 export default {
   name: 'IRTSGallery',
   data() {
     return {
       zoomedImageIndex: null,
       images: [
-        '/assets/Exterieur_IRTS_VR.png',
-        '/assets/Interieur_IRTS_VR.png',
-        '/assets/Trello_IRTS.png'
+        ExterieurImage,
+        InterieurImage,
+        TrelloImage
       ]
     }
   },

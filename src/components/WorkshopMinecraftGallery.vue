@@ -33,15 +33,20 @@
 </template>
 
 <script>
+
+import Ext from '@/assets/epsi_ext_minecraft.png'
+import MyDil from '@/assets/my_dil_minecraft.png'
+import Dropper from '@/assets/dropper_minecraft.png'
+
 export default {
   name: 'WorkshopMinecraftGallery',
   data() {
     return {
       zoomedImageIndex: null,
       images: [
-        '/src/assets/epsi_ext_minecraft.png',
-        '/src/assets/my_dil_minecraft.png',
-        '/src/assets/dropper_minecraft.png'
+        Ext,
+        MyDil,
+        Dropper
       ]
     }
   },

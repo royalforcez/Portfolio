@@ -4,7 +4,7 @@
 
     
     <div class="pdf-download">
-      <a href="/src/assets/marketing-project.pdf" 
+      <a :href="pdfFile2" 
          download
          class="download-button">
         <svg class="pdf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -53,10 +53,13 @@
 </template>
 
 <script>
+import pdfFile2 from '@/assets/marketing-project.pdf'
+
 export default {
   name: 'MarketingProject',
   data() {
     return {
+      pdfFile2,
       isContextOpen: false,
       isPresentationOpen: false
     }

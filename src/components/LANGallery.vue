@@ -17,7 +17,7 @@
       </div>
 
       <div class="pdf-download">
-      <a href="/src/assets/Guide_serveur.pdf" 
+      <a :href="pdfFile" 
          download
          class="download-button">
         <svg class="pdf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -52,15 +52,21 @@
 </template>
 
 <script>
+
+import Jira from '@/assets/Jira_LAN.png'
+import Maquette from '@/assets/LAN_maquette.png'
+import pdfFile from '@/assets/Guide_serveur.pdf'
+
+
 export default {
   name: 'LANGallery',
   data() {
     return {
+      pdfFile,
       zoomedImageIndex: null,
       images: [
-        '/src/assets/Jira_LAN.png',
-        '/src/assets/LAN_maquette.png'
-        
+        Jira,
+        Maquette   
       ]
     }
   },

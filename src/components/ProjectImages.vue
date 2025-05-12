@@ -33,15 +33,20 @@
 </template>
 
 <script>
+
+import Sommaire from '@/assets/sommaire_MD.png'
+import Objectifs from '@/assets/objectifs_MD.png'
+import Pestel from '@/assets/pestel_MD.png'
+
 export default {
   name: 'ProjectImages',
   data() {
     return {
       zoomedImageIndex: null,
       images: [
-        '/src/assets/sommaire_MD.png',
-        '/src/assets/objectifs_MD.png',
-        '/src/assets/pestel_MD.png'
+        Sommaire,
+        Objectifs,
+        Pestel
       ]
     }
   },
